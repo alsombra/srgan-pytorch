@@ -1,0 +1,11 @@
+x__pycache__/
+*.pyc
+.vscode
+.nsmlignore
+.DS_Store
+logs/
+results/
+samples/
+models/
+results/
+database/
