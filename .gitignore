@@ -7,5 +7,6 @@ logs/
 results/
 samples/
 models/
+test_images/
 results/
 database/

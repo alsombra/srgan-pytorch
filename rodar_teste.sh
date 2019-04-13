@@ -3,10 +3,10 @@
 python main.py --scale_factor=2 --mode=train --num_workers=0 --model_save_step=1000 --sample_step=100 --image_size=64 \
 --num_channels=3 \
 --batch_size=16 \
---content_loss_function='l1' \
+--content_loss_function='l2' \
 --total_step=61001 \
---trained_discriminator=10000_cont_L1_resid_L1_DISC__loss_gen_0.212_loss_disc_0.001.pth.tar \
---trained_model=10000_cont_L1_resid_L1_GEN__loss_gen_0.212_loss_disc_0.001.pth.tar
+--trained_discriminator=55000_cont_L2_DISC__loss_gen_0.293_loss_disc_0.000.pth.tar \
+--trained_model=55000_cont_L2_GEN__loss_gen_0.293_loss_disc_0.000.pth.tar
 
 
 
@@ -44,8 +44,8 @@ python main.py --scale_factor=2 --mode='test' --test_mode='many' --num_workers=0
 --batch_size=1 \
 --image_size=64 \
 --test_image_path='./test_images/' \
---trained_discriminator=10000_cont_L1_resid_L1_DISC__loss_gen_0.212_loss_disc_0.001.pth.tar \
---trained_model=10000_cont_L1_resid_L1_GEN__loss_gen_0.212_loss_disc_0.001.pth.tar
+--trained_discriminator=61000_cont_L1_DISC__loss_gen_0.158_loss_disc_0.000.pth.tar \
+--trained_model=61000_cont_L1_GEN__loss_gen_0.158_loss_disc_0.000.pth.tar
 
 
 

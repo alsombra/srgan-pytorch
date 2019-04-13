@@ -446,7 +446,7 @@ class Solver(object):
         image_hr_bicubic = torch.from_numpy(image_hr_bicubic).float().to(self.device) # NUMPY to TORCH
         hr_image_hat = reconst
         hr_image_hat_np = hr_image_hat.data.cpu().numpy()
-        hr_image_hat_np_scaled = np.squeeze(hr_image_hat).transpose((1, 2, 0))
+        hr_image_hat_np_scaled = np.squeeze(hr_image_hat_np).transpose(1, 2, 0)
         hr_image_hat_np_png = (hr_image_hat_np_scaled*255).astype(np.uint8)
         #return this ^
 
@@ -461,7 +461,7 @@ class Solver(object):
         pairs = torch.cat((image_hr_bicubic.data, \
                         hr_image_hat_torch.data), dim=3)
         grid = make_grid(pairs, 1) 
-        tmp = np.squeeze(grid.cpu().numpy().transpose((1, 2, 0)))
+        tmp = np.squeeze(grid.cpu().numpy().transpose(1, 2, 0))
         tmp = (255 * tmp).astype(np.uint8)
         random_number = np.random.rand(1)[0]        
         Image.fromarray(tmp).save('./results/grids/'+ os.path.basename(self.test_image_path).split('.')[0]+'_grid_{}.png'.format(step))
